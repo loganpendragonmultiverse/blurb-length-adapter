@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "source": "A courier discovers a city hidden beneath the winter sea, where every locked door remembers its last visitor.",
+  "profiles": [
+    {"id": "logline", "label": "Logline", "max_words": 25},
+    {"id": "short-store", "label": "Short store listing", "max_characters": 240},
+    {"id": "catalog", "label": "Catalog description", "max_words": 120}
+  ],
+  "variants": {"logline": "A courier finds a submerged city whose locked doors remember everyone who entered."}
+}
