@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 - 2026-10-16
+
+- Added explicit per-profile all-character and Unicode-whitespace-excluding character policies, with policy and counted totals in reports.
+- Preserved default counts and word limits; covered Unicode, exact limits and invalid policies with synthetic tests.
+
 ## 1.0.0 - 2026-07-26
 
 - Added versioned blurb workspaces and custom length profiles.
