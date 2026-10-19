@@ -2,6 +2,7 @@
 
 ## 1.1.1 - 2026-10-19
 
+- Return exit code 2 for a closed stdout pipe without an interpreter shutdown traceback.
 - Create outputs exclusively and refuse dangling symlinks; preserve concurrently created files.
 - Document ordinary file-error behavior and partial-output limits.
 - Reject boolean limits and blank profile IDs or labels; retain Unicode counting policies.

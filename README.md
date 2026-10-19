@@ -37,3 +37,5 @@ Profiles accept `"character_count": "all"` (the default) or `"exclude-whitespace
 Output files are created exclusively. Existing files, source inputs and symlink destinations are refused, including files created by another writer after validation. Ordinary file errors return exit code 2 with a message. A failed write may leave a partial new report; inspect it and retry with a new destination. This does not provide transactions through power loss.
 
 Profile IDs and labels must be nonblank text. Each supplied limit must be a positive integer; JSON booleans are rejected. IDs are kept exactly as authored and must be unique.
+
+Closed stdout pipes return exit code 2 with a useful error, without leaving report bytes in an interpreter buffer. Regression checks cover small/large pipes, partial writes and complete Unicode output.
