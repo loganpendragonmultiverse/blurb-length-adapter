@@ -11,7 +11,9 @@ from blurb_length_adapter import cli
 
 
 def run_cli(source, **kwargs):
-    env = dict(os.environ, PYTHONPATH=str(Path(package.__file__).parent.parent))
+    env = dict(
+        os.environ, PYTHONPATH=str(Path(package.__file__).parent.parent), PYTHONIOENCODING="utf-8"
+    )
     return subprocess.run(
         [sys.executable, "-m", "blurb_length_adapter", str(source)],
         check=False,
