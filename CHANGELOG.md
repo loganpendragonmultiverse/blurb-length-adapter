@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 - 2026-10-19
+
+- Create outputs exclusively and refuse dangling symlinks; preserve concurrently created files.
+- Document ordinary file-error behavior and partial-output limits.
+- Reject boolean limits and blank profile IDs or labels; retain Unicode counting policies.
+
 ## 1.1.0 - 2026-10-16
 
 - Added explicit per-profile all-character and Unicode-whitespace-excluding character policies, with policy and counted totals in reports.

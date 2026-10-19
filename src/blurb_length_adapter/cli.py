@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -22,9 +23,10 @@ def main(argv: list[str] | None = None) -> int:
             else render_markdown(result)
         )
         if args.output:
-            if args.output.exists():
+            if os.path.lexists(args.output):
                 raise ValueError(f"output already exists: {args.output}")
-            args.output.write_text(rendered, encoding="utf-8")
+            with args.output.open("x", encoding="utf-8", newline="\n") as output:
+                output.write(rendered)
         else:
             sys.stdout.write(rendered)
     except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:

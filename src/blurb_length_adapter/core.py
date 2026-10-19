@@ -40,12 +40,14 @@ def load_workspace(path: Path) -> dict[str, Any]:
             or not isinstance(profile.get("label"), str)
         ):
             raise TypeError("each profile requires string id and label")
+        if not profile["id"].strip() or not profile["label"].strip():
+            raise ValueError("profile id and label must be nonblank")
         if profile["id"] in seen:
             raise ValueError(f"duplicate profile id: {profile['id']}")
         character_policy(profile)
         limits = [profile.get("max_words"), profile.get("max_characters")]
         if all(limit is None for limit in limits) or any(
-            limit is not None and (not isinstance(limit, int) or limit <= 0) for limit in limits
+            limit is not None and (type(limit) is not int or limit <= 0) for limit in limits
         ):
             raise ValueError(f"profile {profile['id']} requires positive limits")
         seen.add(profile["id"])
